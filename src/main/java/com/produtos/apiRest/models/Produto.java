@@ -17,13 +17,15 @@ public class Produto implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String name;
 	private BigDecimal quantidate;
 	private BigDecimal valor;
 	
 	public Produto() {}
 	
-	public Produto(Long id, BigDecimal quantidate, BigDecimal valor) {
+	public Produto(Long id, String name, BigDecimal quantidate, BigDecimal valor) {
 		this.id = id;
+		this.name = name;
 		this.quantidate = quantidate;
 		this.valor = valor;
 	}
@@ -50,6 +52,14 @@ public class Produto implements Serializable{
 
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
